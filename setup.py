@@ -7,7 +7,7 @@ import setuptools
 from setuptools import setup, find_packages
 
 
-packagename = "package_name"  # this has to be renamed
+packagename = "package_name"  # TODO: this has to be renamed
 
 # consider the path of `setup.py` as root directory:
 PROJECTROOT = os.path.dirname(sys.argv[0]) or "."
@@ -19,19 +19,21 @@ with open(release_path, encoding="utf8") as release_file:
 with open("requirements.txt") as requirements_file:
     requirements = requirements_file.read()
 
+with open("README.md") as readme_file:
+    long_description = readme_file.read()
+
 setup(
     name=packagename,
     version=__version__,
-    author="First Name",
-    author_email="my.name@some.domain",
+    author="First Name", #TODO:
+    author_email="my.name@some.domain", #TODO:
     packages=find_packages("src"),
     package_dir={"": "src"},
-    # url="https://codeberg.org/username/reponame",
+    #TODO: url="https://codeberg.org/username/reponame",
     license="GPLv3",
     description="some description",
-    long_description="""
-    ...
-    """,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     install_requires=requirements,
     classifiers=[
         "Development Status :: 3 - Alpha",
