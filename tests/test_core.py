@@ -1,13 +1,12 @@
 import unittest
-from ipydex import IPS, activate_ips_on_exception
 
-activate_ips_on_exception()
+from package_name.core import add
 
-# noinspection PyPep8Naming
-class TestCore(unittest.TestCase):
-    def setUp(self):
-        pass
 
-    # mark tests which only work for the "old core"
-    def test_core1(self):
-        pass
+class TestStringMethods(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 1), 2)
+
+
+if __name__ == '__main__':
+    unittest.main()
